@@ -1,2 +1,3 @@
 # Vue-keep
-Google Keep Clone using Vue
+
+Google Keep Clone using Vue.
