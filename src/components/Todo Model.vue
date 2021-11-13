@@ -1,12 +1,12 @@
 <template>
 
     <div class="todos" v-for="todo in todos" :key="todo.id">
-    <div id="todo" class="max-w-xs px-6 py-3 rounded-xl cursor-default group border border-gray-400 bg-white hover:shadow-xl hover:border-gray-300 transition-all duration-200 transform hover:translate-x-2 hover:-translate-y-2" >
+    <div id="todo" class="max-w-xs px-6 py-3 rounded-xl cursor-default group border border-gray-400 bg-white hover:shadow-xl hover:border-gray-300 transition-all duration-300 transform hover:translate-x-2 hover:-translate-y-2" >
         <h1 class="text-black text-xl font-extrabold"> {{ todo.title }} </h1>
         <p class="text-black pt-1 text-justify"> {{ todo.Description }}</p>
-        <div class="flex justify-between">
-            <ColorSwatchIcon class="icon h-6 w-6 p-0.5 md:h-7 md:w-7 mt-1 cursor-pointer"/>
-            <TrashIcon class="icon h-6 w-6 p-0.5 md:h-7 md:w-7 mt-1 cursor-pointer"/>
+        <div class="flex justify-between text-gray-800">
+            <ColorSwatchIcon class="opacity-0 icon h-6 w-6 p-0.5 md:h-7 md:w-7 mt-1 cursor-pointer" @click="colour()"/>
+            <TrashIcon class="opacity-0 icon h-6 w-6 p-0.5 md:h-7 md:w-7 mt-1 cursor-pointer" @click="deletetodo()"/>
         </div>
     </div>
     </div>
@@ -28,26 +28,55 @@ export default {
             {
                 id: 1,
                 title: 'Todo 1',
-                Description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, dignissimos. Minima eum soluta necessitatibus ex beatae? Quas modi dolore placeat, cupiditate corrupti minima ut est? Cupiditate, sit voluptatum eius dolor nobis eveniet numquam pariatur explicabo provident, quaerat auto-cols-fr	chbhbedhbnnund hhh'
+                Description: 'Lore chdbcd cgdscdgs vcgsvd cgs vdcsv dnhcbsdchh'
             },
             {
                 id: 2,
                 title: 'Todo 2',
-                Description: 'Lorbeatae? Quas modi dolore placeat, cupiditate corrupti minima ut est? Cupiditate, sit voluptatum eius dolor nobis eveniet numquam pariatur explicabo provident, quaerat auto-cols-fr	chbhbedhbnnund hhh'
+                Description: 'Lorbluptatum eius dolor nobis eveniet numquam pariatur explicabo provident, quaerat auto-cols-fr	chbhbedhbnnund hhh'
             },
             {
-                id: 3,
+                id: 4,
+                title: 'Todo 3',
+                Description: 'ols-fr	chbhbedhbnnund hhh'
+            },            {
+                id: 5,
+                title: 'Todo 3',
+                Description: 'ols-fr	chbhbedhbnnund hhh'
+            },            {
+                id: 6,
+                title: 'Todo 3',
+                Description: 'ols-fr	chbhbedhbnnund hhh'
+            },            {
+                id: 7,
+                title: 'Todo 3',
+                Description: 'ols-fr	chbhbedhbnnund hhh'
+            },            {
+                id: 8,
                 title: 'Todo 3',
                 Description: 'ols-fr	chbhbedhbnnund hhh'
             },
         ]);
 
+        function colour() {
+            console.log("colour");
+        }       
+        
+        function deletetodo() {
+            console.log("deleted");
+        }
+
         return  {
             todos,
+            colour,
+            deletetodo,
         }
     }
 }
 </script>
 <style scoped>
-    
+    #todo:hover .icon {
+        transition: opacity 0.3s ease-in-out;
+        opacity: 1;
+    }
 </style>

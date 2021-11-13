@@ -2,7 +2,7 @@
   <navbar />
   <main class="pt-20">
     <add />
-    <section class="flex flex-wrap items-baseline gap-6 xl:max-w-screen-xl max-w-screen-md mx-auto mt-20 px-4"> 
+    <section class="flex flex-wrap gap-4 justify-center xl:max-w-screen-2xl max-w-screen-md mx-auto mt-20 px-4"> 
       <Todomodel />
     </section>
   </main>

@@ -35,7 +35,14 @@
 </template>
 <script>
 export default {
-    
+    setup() {
+      function addtodo() {
+        console.log('add todo');
+    }
+    return {
+      addtodo
+    }
+}
 }
 </script>
 <style scoped>

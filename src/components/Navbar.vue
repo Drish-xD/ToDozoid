@@ -5,8 +5,8 @@
             <span class="text-xl font-syne font-black select-none">ToDoZoid</span>
         </a>
         <div class="flex mx-16">
-            <TrashIcon class="icon h-6 w-6 mx-2 md:mx-5 md:h-7 md:w-7 cursor-pointer"/>
-            <RefreshIcon class="icon h-6 w-6 mx-2 md:mx-5 md:h-7 md:w-7 cursor-pointer"/>    
+            <TrashIcon class="icon h-6 w-6 mx-2 md:mx-5 md:h-7 md:w-7 cursor-pointer" @click="deleteall()"/>
+            <RefreshIcon class="icon h-6 w-6 mx-2 md:mx-5 md:h-7 md:w-7 cursor-pointer" @click="refresh()"/>    
             <a href="https://github.com/Drish-xD/ToDozoid" target="_blank" class="github-corner">
                 <svg width="65" height="65" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;">
                     <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -26,6 +26,16 @@ import { BadgeCheckIcon } from "@heroicons/vue/solid"
 
 
 export default {
+    setup() {
+        return {
+            deleteall() {
+                console.log("deleteall()");
+            },
+            refresh() {
+                console.log("refresh()");
+            }
+        }
+    },
   components: {
     TrashIcon,
     RefreshIcon,
