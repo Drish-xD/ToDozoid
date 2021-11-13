@@ -1,11 +1,7 @@
 <template>
-  <div class="pt-20 w-full sm:container px-4 mx-auto">
-    <div class=" w-full sm:w-3/6 mx-auto">
-
-    <div class="">
+    <div class=" max-w-screen-sm mx-auto sm:px-0 px-4">
       <h1 class="block text-center font-extrabold font-syne bg-indigo-500">Add ToDo</h1>
-      <div class="mt-5 md:mt-0 md:col-span-2">
-        <form action="#" method="POST">
+        <form @submit.prevent="addtodo()" method="POST">
           <div class="shadow sm:rounded-md sm:overflow-hidden">
             <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
               <div class="grid grid-cols-3 gap-6">
@@ -35,10 +31,7 @@
             </div>
           </div>
         </form>
-      </div>
     </div>
-    </div>
-  </div>
 </template>
 <script>
 export default {
@@ -46,11 +39,6 @@ export default {
 }
 </script>
 <style scoped>
-    .container-sm {
-        max-width: 60%;
-        background: #393E46;
-    }
-
     .font-syne {
         font-family: 'Syne';
     }

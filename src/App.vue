@@ -1,13 +1,17 @@
 <template>
   <navbar />
-  <add />
-  <Todo />
+  <main class="pt-20">
+    <add />
+    <section class="flex flex-wrap items-baseline gap-6 xl:max-w-screen-xl max-w-screen-md mx-auto mt-20 px-4"> 
+      <Todomodel />
+    </section>
+  </main>
 </template>
 
 <script>
 import navbar from "./components/Navbar.vue";
 import add from "./components/Add Model.vue";
-import Todo from "./components/Todo Model.vue";
+import Todomodel from "./components/Todo Model.vue";
 
 
 export default {
@@ -15,7 +19,7 @@ export default {
   components: {
     navbar,
     add,
-    Todo,
+    Todomodel,
   }
 }
 </script>
@@ -33,8 +37,7 @@ export default {
 
 body {
   width: 100%;
-  height: 100v;
-  background: #f1f1f1;
+  height: 100vh;
 }
 
 ::-webkit-scrollbar {
