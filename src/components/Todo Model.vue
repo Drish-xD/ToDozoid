@@ -5,8 +5,8 @@
         <h1 class="text-black text-xl font-extrabold"> {{ todo.title }} </h1>
         <p class="text-black pt-1 text-justify"> {{ todo.Description }}</p>
         <div class="flex justify-between text-gray-800">
-            <ColorSwatchIcon class="opacity-0 icon h-6 w-6 p-0.5 md:h-7 md:w-7 mt-1 cursor-pointer" @click="colour()"/>
-            <TrashIcon class="opacity-0 icon h-6 w-6 p-0.5 md:h-7 md:w-7 mt-1 cursor-pointer" @click="deletetodo(todo)"/>
+            <ColorSwatchIcon class="hidden opacity-0 icon h-6 w-6 p-0.5 md:h-7 md:w-7 mt-1 cursor-pointer" @click="colour()"/>
+            <TrashIcon class="hidden opacity-0 icon h-6 w-6 p-0.5 md:h-7 md:w-7 mt-1 cursor-pointer" @click="deletetodo(todo)"/>
         </div>
     </div>
     </div>
@@ -82,6 +82,7 @@ export default {
 <style scoped>
     #todo:hover .icon {
         transition: opacity 0.3s ease-in-out;
+        display: block;
         opacity: 1;
     }
 </style>

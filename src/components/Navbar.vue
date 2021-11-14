@@ -26,13 +26,13 @@ import { BadgeCheckIcon } from "@heroicons/vue/solid"
 export default {
     setup() {
         return {
-            deleteall() {
-                // console.log("deleteall()");
-            },
             refresh() {
                 console.log("refresh()");
                 window.location.reload();
-            }
+            },
+            deleteall() {
+                console.log("deleteall()");
+            },
         }
     },
   components: {

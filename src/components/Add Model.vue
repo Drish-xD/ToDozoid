@@ -35,6 +35,7 @@
 </template>
 <script>
 import { ref } from "vue"
+// import todos from "./Todo Model.vue"
 
 export default {
     setup() {
@@ -43,6 +44,14 @@ export default {
         description: "",
       })
       function addtodo() {
+        // if (newtodo.value.trim()) {
+        //   todos.value.push ( {
+        //     title: newtodo.value,
+        //     description: newtodo.value,
+        //     completed: false,
+        //   })
+
+        // }
         console.log(newtodo.value.title);
         console.log(newtodo.value.description);
         console.log("add");
@@ -55,9 +64,10 @@ export default {
       addtodo,
       newtodo,
     }
-}
+  }
 }
 </script>
+
 <style scoped>
     .font-syne {
         font-family: 'Syne';
