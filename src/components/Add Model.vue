@@ -1,7 +1,7 @@
 <template>
     <div class=" max-w-screen-sm mx-auto sm:px-0 px-4">
       <h1 class="block text-center font-extrabold font-syne bg-indigo-500">Add ToDo</h1>
-        <form @submit.prevent="addtodo()" method="POST">
+        <form @submit.prevent="addtodo()" method="POST" v-on:keyup.enter="addtodo()">
           <div class="shadow sm:rounded-md sm:overflow-hidden">
             <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
               <div class="grid grid-cols-3 gap-6">
@@ -10,7 +10,7 @@
                     Title
                   </label>
                   <div class="mt-1 flex rounded-md shadow-sm">
-                    <input type="text" name="ToDo-Title" id="ToDo-Title" class="p-3 h-7 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="Title" />
+                    <input type="text" name="ToDo-Title" id="ToDo-Title" v-model="newtodo.title" class="p-3 h-7 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="Title" />
                   </div>
                 </div>
               </div>
@@ -20,7 +20,7 @@
                   Description
                 </label>
                 <div class="mt-1">
-                  <textarea id="about" name="about" rows="3" class="p-3 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="Description" />
+                  <textarea id="about" v-model="newtodo.description" name="about" rows="3" class="p-3 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="Description" />
                 </div>
               </div>
             </div>
@@ -34,13 +34,26 @@
     </div>
 </template>
 <script>
+import { ref } from "vue"
+
 export default {
     setup() {
+      const newtodo = ref({
+        title: "",
+        description: "",
+      })
       function addtodo() {
-        console.log('add todo');
+        console.log(newtodo.value.title);
+        console.log(newtodo.value.description);
+        console.log("add");
+        newtodo.value = {
+          title: "",
+          description: "",
+        };
     }
     return {
-      addtodo
+      addtodo,
+      newtodo,
     }
 }
 }

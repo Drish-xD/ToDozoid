@@ -6,7 +6,7 @@
         <p class="text-black pt-1 text-justify"> {{ todo.Description }}</p>
         <div class="flex justify-between text-gray-800">
             <ColorSwatchIcon class="opacity-0 icon h-6 w-6 p-0.5 md:h-7 md:w-7 mt-1 cursor-pointer" @click="colour()"/>
-            <TrashIcon class="opacity-0 icon h-6 w-6 p-0.5 md:h-7 md:w-7 mt-1 cursor-pointer" @click="deletetodo()"/>
+            <TrashIcon class="opacity-0 icon h-6 w-6 p-0.5 md:h-7 md:w-7 mt-1 cursor-pointer" @click="deletetodo(todo)"/>
         </div>
     </div>
     </div>
@@ -26,34 +26,38 @@ export default {
     setup() {
         const todos = ref([
             {
-                id: 1,
+                id: 0,
                 title: 'Todo 1',
                 Description: 'Lore chdbcd cgdscdgs vcgsvd cgs vdcsv dnhcbsdchh'
             },
             {
-                id: 2,
+                id: 1,
                 title: 'Todo 2',
                 Description: 'Lorbluptatum eius dolor nobis eveniet numquam pariatur explicabo provident, quaerat auto-cols-fr	chbhbedhbnnund hhh'
             },
             {
+                id: 2,
+                title: 'Todo 3',
+                Description: 'ols-fr	chbhbedhbnnund hhh'
+            },
+            {
+                id: 3,
+                title: 'Todo 4',
+                Description: 'ols-fr	chbhbedhbnnund hhh'
+            },
+            {
                 id: 4,
-                title: 'Todo 3',
+                title: 'Todo 5',
                 Description: 'ols-fr	chbhbedhbnnund hhh'
-            },            {
+            },
+            {
                 id: 5,
-                title: 'Todo 3',
+                title: 'Todo 6',
                 Description: 'ols-fr	chbhbedhbnnund hhh'
-            },            {
+            },
+            {
                 id: 6,
-                title: 'Todo 3',
-                Description: 'ols-fr	chbhbedhbnnund hhh'
-            },            {
-                id: 7,
-                title: 'Todo 3',
-                Description: 'ols-fr	chbhbedhbnnund hhh'
-            },            {
-                id: 8,
-                title: 'Todo 3',
+                title: 'Todo 7',
                 Description: 'ols-fr	chbhbedhbnnund hhh'
             },
         ]);
@@ -62,7 +66,8 @@ export default {
             console.log("colour");
         }       
         
-        function deletetodo() {
+        function deletetodo(todo) {
+            todos.value = todos.value.filter(t => t.id !== todo.id);
             console.log("deleted");
         }
 

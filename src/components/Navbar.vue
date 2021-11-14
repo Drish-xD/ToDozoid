@@ -23,16 +23,15 @@ import { TrashIcon } from '@heroicons/vue/solid'
 import { RefreshIcon } from '@heroicons/vue/solid'
 import { BadgeCheckIcon } from "@heroicons/vue/solid"
 
-
-
 export default {
     setup() {
         return {
             deleteall() {
-                console.log("deleteall()");
+                // console.log("deleteall()");
             },
             refresh() {
                 console.log("refresh()");
+                window.location.reload();
             }
         }
     },
