@@ -5,7 +5,6 @@
             <span class="text-xl font-syne font-black select-none">ToDoZoid</span>
         </a>
         <div class="flex mx-16">
-            <TrashIcon class="icon h-6 w-6 mx-2 md:mx-5 md:h-7 md:w-7 cursor-pointer" @click="deleteall()"/>
             <RefreshIcon class="icon h-6 w-6 mx-2 md:mx-5 md:h-7 md:w-7 cursor-pointer" @click="refresh()"/>    
             <a href="https://github.com/Drish-xD/ToDozoid" target="_blank" class="github-corner">
                 <svg width="65" height="65" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;">
@@ -19,7 +18,6 @@
 </template>
 
 <script>
-import { TrashIcon } from '@heroicons/vue/solid'
 import { RefreshIcon } from '@heroicons/vue/solid'
 import { BadgeCheckIcon } from "@heroicons/vue/solid"
 
@@ -27,21 +25,18 @@ export default {
     setup() {
         return {
             refresh() {
-                console.log("refresh()");
                 window.location.reload();
-            },
-            deleteall() {
-                console.log("deleteall()");
+                console.log("refresh()");
             },
         }
     },
-  components: {
-    TrashIcon,
-    RefreshIcon,
-    BadgeCheckIcon,
-}
-}
+    components: {
+        RefreshIcon,
+        BadgeCheckIcon,
+    }
+}  
 </script>
+
 <style lang="css" scoped>
     .logo {
         color: #00ADB5;
@@ -73,30 +68,29 @@ export default {
     }
 
     @keyframes octocat-wave {
+        0%,
+        100% {
+            transform: rotate(0);
+        }
 
-    0%,
-    100% {
-        transform: rotate(0);
-    }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
 
-    20%,
-    60% {
-        transform: rotate(-25deg);
-    }
-
-    40%,
-    80% {
-        transform: rotate(10deg);
-    }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
     }
 
     @media (max-width:500px) {
-    .github-corner:hover .octo-arm {
-        animation: none;
-    }
+        .github-corner:hover .octo-arm {
+            animation: none;
+        }
 
-    .github-corner .octo-arm {
-        animation: octocat-wave 560ms ease-in-out;
-    }
+        .github-corner .octo-arm {
+            animation: octocat-wave 560ms ease-in-out;
+        }
     }
 </style>
