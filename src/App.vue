@@ -55,9 +55,6 @@ import { ref, onMounted } from "vue"
 import { TrashIcon } from '@heroicons/vue/solid'
 import { ColorSwatchIcon  } from '@heroicons/vue/solid'
 import navbar from "./components/Navbar.vue";
-// import add from "./components/Add Model.vue";
-// import Todomodel from "./components/Todo Model.vue";
-
 
 export default {
   name: 'App',
@@ -112,23 +109,12 @@ export default {
       }
     }
 
-    var isempty = false;
-    let todocopy = JSON.parse(localStorage.getItem("todocopy"));
-    if ( todocopy.length == 0 ) {
-      isempty = true;
-      console.log("empty");
-    } else {
-      isempty = false;
-      console.log("not empty");
-    }
-
     return {
       newtodo,
       todos,
       addtodo,
       deletetodo,
       colour,
-      isempty,
     }
   }
 }
