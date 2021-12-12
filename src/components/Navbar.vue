@@ -1,11 +1,11 @@
 <template lang="html">
-    <div class="fixed flex h-16 w-full items-center justify-between py-5 filter drop-shadow-md z-20">
+    <div class="fixed flex h-16 w-full items-center justify-between py-5 z-20 bg-black bg-opacity-50">
         <a herf="#" class="inline-flex items-center ml-5 cursor-pointer">
-            <BadgeCheckIcon class="h-7 w-7 md:h-8 md:w-8 logo"/>
-            <span class="text-xl font-syne font-black select-none">ToDoZoid</span>
+            <BadgeCheckIcon class="h-7 w-7 md:h-8 md:w-8 text-yellow-500"/>
+            <span class="text-xl font-syne font-black select-none text-white transition-colors duration-200 hover:text-yellow-400">ToDoZoid</span>
         </a>
         <div class="flex mx-16">
-            <RefreshIcon class="icon h-6 w-6 mx-2 md:mx-5 md:h-7 md:w-7 cursor-pointer" @click="refresh()"/>    
+            <RefreshIcon class="h-6 w-6 mx-2 md:mx-5 md:h-7 md:w-7 cursor-pointer text-white transition-colors duration-200 hover:text-yellow-400 hover:animate-spin" @click="refresh()"/>    
             <a href="https://github.com/Drish-xD/ToDozoid" target="_blank" class="github-corner">
                 <svg width="65" height="65" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;">
                     <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -38,31 +38,10 @@ export default {
 </script>
 
 <style lang="css" scoped>
-    .logo {
-        color: #00ADB5;
-    }
-    div {
-        background-color: #222831;
-    }
-
-    .icon, span {
-        color: #EEEEEE;
-        transition: color 0.2s ease-in-out;
-    }
-
-    span:hover {
-        color: #00ADB5;
-    }
-
-    .icon:hover, .logo:hover{
-        color: #00ADB5;
-        animation: octocat-wave 560ms ease-in-out;
-    }
-
     .font-syne {
         font-family: 'Syne';
     }
-
+    
     .github-corner:hover .octo-arm {
         animation: octocat-wave 560ms ease-in-out;
     }
