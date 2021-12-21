@@ -1,7 +1,15 @@
+import Navbar from './components/Navbar';
+import Addbox from './components/Addbox';
+import Todo from './components/Todobox';
+import Footer from './components/Footer';
+
 const App = () => {
     return (
         <div>
-          hello World
+            <Navbar />
+            <Addbox />
+            <Todo />
+            <Footer />
         </div>
     )
 }
